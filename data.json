@@ -1,0 +1,51 @@
+{
+    "Uid" : ,
+    "Username" : { 
+    "Month":,
+    "Year" :,
+    "Expense": {
+        "Categories" : {
+            "groceries": {
+                "subCategories" : [
+                        {
+                            "name" : "hummus",
+                            "time" : "16/11/2021",
+                            "cost" : "$323112",
+                        }
+                ],		
+                "amountSpent" :,
+                "count":,
+                "budget" : ,
+                "priorityPercent" : ,
+            },
+            "home" : {
+                "subCategories" : 
+                [
+                        {
+                            "name" : "rent",
+                            "time" : "16/11/2021",
+                            "cost" : "$323112"
+                        }
+                ],
+                "amountSpent" :,
+                "count":,
+                "budget" :, 
+                "priorityPercent" : ,
+            },
+            "Entertainment" : {
+                "subCategories" : [
+                        {
+                            "name" : "Adir miller show",
+                            "time" : "16/11/2021",
+                            "cost" : "$323112",
+                        }	
+                ],
+                "amountSpent" :,
+                "count" : ,
+                "budget" : ,
+                "priorityPercent" : ,	
+            },
+        
+    },
+    "incomes" : ,
+}
