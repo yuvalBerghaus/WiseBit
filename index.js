@@ -2,11 +2,12 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const Plan = require('./models/plan');
+const env = require('dotenv').config();
 // express app
 const app = express();
 
 // connect to mongodb & listen for requests
-const dbURI = 'mongodb+srv://kayuse:NDPAQGXcgzTedNHr@cluster0.1ktor.mongodb.net/WiseBit?retryWrites=true&w=majority';
+const dbURI = process.env.DB_HOST
 const http = require('http');
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(result => app.listen(3000))
