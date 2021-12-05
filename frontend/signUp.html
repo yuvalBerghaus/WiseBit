@@ -20,17 +20,35 @@
         </header>
 
         <main>
-
-            <div class="container" id="signIn">
+            <div class="container" id="signUp">
                 <div class="login-content">
                     <form action="index.html">
+
                         <div class="input-div one">
+                            <div class="i">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="div">
+                                <h5>Username</h5>
+                                <input type="text" class="input">
+                            </div>
+                        </div>
+                        <div class="input-div pass">
                             <div class="i">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="div">
                                 <h5>Email</h5>
                                 <input type="email" class="input">
+                            </div>
+                        </div>
+                        <div class="input-div pass">
+                            <div class="i">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="div">
+                                <h5>Phone</h5>
+                                <input type="text" class="input">
                             </div>
                         </div>
                         <div class="input-div pass">
@@ -42,30 +60,14 @@
                                 <input type="password" class="input">
                             </div>
                         </div>
-                        <input type="submit" class="btn" value="Sign in"><br>
-                        <p> Don't Have An Account? <a href="http://localhost:8080/api/auth/signup" id="signNow">Sign Up Now</a></p><br>
-                        <a href="#" id="forgotPsw">Forgot Password</a>
+                        <input type="submit" class="btn" value="Sign Up"><br>
+                        <p> Already have An Account? <a href="http://localhost:8080/api/auth/signin" id="signNow">Sign In Now</a></p>
                     </form>
                 </div>
             </div>
         </main>
-
     </div>
-    <div class="wrapper" id="protectedWrapper">
 
-        <header>
-
-        </header>
-
-        <main>
-
-        </main>
-
-        <nav>
-
-        </nav>
-
-    </div>
     <script type="text/javascript" src="scripts/scripts.js"></script>
 </body>
 
