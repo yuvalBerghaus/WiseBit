@@ -1,14 +1,12 @@
 const Expense = require('./models/expense');
-const mongoose = require('mongoose');
-const schema = mongoose.Schema;
-
-const planSchema = new mongoose.Schema({
+const { Schema, model } = require('mongoose');
+const planSchema = new Schema({
     Username: String,
     Month: String,
     Year: Number,
     Expense: Expenses,
     Incomes: String,
 
-})
-const Plan = mongoose.model('Plan', planSchema)
+}, { collection: 'plan' })
+const Plan = model('Plan', planSchema)
 module.exports = Plan;
