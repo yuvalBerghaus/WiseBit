@@ -1,12 +1,11 @@
 const Expense = require('./models/expense');
+const Incomes = require('./models/income');
 const { Schema, model } = require('mongoose');
 const planSchema = new Schema({
-    Username: String,
-    Month: String,
-    Year: Number,
-    Expense: Expenses,
-    Incomes: String,
-
+    Date: String,
+    Expense: [Expenses],
+    Income: [Incomes],
+    desiredSavings: Number,
 }, { collection: 'plan' })
 const Plan = model('Plan', planSchema)
 module.exports = Plan;

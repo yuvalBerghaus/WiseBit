@@ -1,5 +1,6 @@
-const Expense = require('./models/Categories');
 const Expenses = new Schema({
-    Category: [Categories],
-    totalExpense: String,
+    CategoryName: String,
+    amountSpent: Number,
 })
+const Expense = model('Expense', expenseSchema)
+module.exports = Expense;
