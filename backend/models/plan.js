@@ -2,6 +2,7 @@ const Expense = require('./models/expense');
 const Incomes = require('./models/income');
 const { Schema, model } = require('mongoose');
 const planSchema = new Schema({
+    uid: String,
     Date: String,
     Expense: [Expenses],
     Income: [Incomes],

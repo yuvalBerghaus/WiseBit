@@ -1,4 +1,5 @@
 const incomeSchema = new Schema({
+    uid: String,
     incomeFrom: String,
     amount: Number,
 })
