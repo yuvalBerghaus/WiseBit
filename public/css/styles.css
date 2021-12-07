@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header,
+nav,
+main,
+article,
+section {
+    display: block;
+}
+
+body {
+    background-color: #6E9E06;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    margin-top: 63px;
+    height: auto;
+}
+
+main {
+    background-color: #FFF;
+    width: 100%;
+    min-height: 70vh;
+    border-radius: 50px;
+}
+
+
+/* Sign in and Sign up */
+
+#signInAndUpWrapper header {
+    min-height: 20vh;
+}
+
+#logo {
+    width: 250px;
+    height: 250px;
+    margin: auto auto;
+    background-image: url('../images/logo.png');
+    background-position: center;
+}
+
+
+/* Protected */
+
+#protectedHeader {
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px 32px 18px 32px;
+}
+
+#protectedHeader h1 p:nth-child(1) {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+#protectedHeader h1 p:nth-child(2) {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: lighter;
+    color: #FFF;
+}
+
+#protectedHeader section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#protectedHeader section i {
+    font-size: 25px;
+    margin-right: 13px;
+    color: #FFF;
+}
+
+#profileImage {
+    display: block;
+    background-image: url('../images/no-profile-photo.png');
+    height: 40px;
+    width: 40px;
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 23px;
+    color: #6E9E06;
+    margin-left: 42px;
+    padding-top: 30px;
+}
+
+#mainNav {
+    width: 100%;
+    background-color: #6E9E06;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    padding-top: 27px;
+}
+
+#mainNav a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 30px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<%- include("./partials/head.ejs") %>
+
+    <body>
+        <div id="#protectedWrapper">
+            <%- include("./partials/protectedHeader.ejs") %>
+
+                <main>
+                    <h1 class="heading">Recent Transactions</h1>
+
+                    <section id="content">
+
+                        <div id="transactionsList"></div>
+
+                        <div id="graph"></div>
+
+                    </section>
+                </main>
+
+        </div>
+
+        <%- include("./partials/nav.ejs") %>
+            <script type="text/javascript" src="/js/scripts.js"></script>
+    </body>
+
+</html>
+
+
+<!-- <h1>Login</h1>
+        <form method="GET" action="./homepage.html">
+            <input type="email" placeholder="Email" name="email" id="email"><br>
+            <input type="password" placeholder="Password" name="password" id="password"><br>
+            <button type="submit" onclick="handleLogin(document.getElementById('email').value,document.getElementById('password').value)">Submit</button>
+        </form> -->
