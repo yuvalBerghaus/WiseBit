@@ -1,0 +1,30 @@
+{
+    "name": "wisebit",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yuvalBerghaus/WiseBit.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/yuvalBerghaus/WiseBit/issues"
+    },
+    "homepage": "https://github.com/yuvalBerghaus/WiseBit#readme",
+    "devDependencies": {
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.15"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "mongoose": "^6.0.14"
+    }
+}
