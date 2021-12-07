@@ -1,47 +1,46 @@
-// const serviceUrl = 'http://localhost:8080';
-// let User = {};
+const serviceUrl = 'http://localhost:8080';
 
-// const loginUser = (loginEmail, loginPassword) => {
-//     try {
-//         return fetch(`${serviceUrl}/api/auth/login`, {
-//             method: "POST",
-//             credentials: "include",
-//             headers: { "Content-Type": "application/json" },
-//             body: JSON.stringify({
-//                 email: loginEmail,
-//                 password: loginPassword,
-//             }),
-//         }).then((response) => {
-//             console.log(response.body);
-//             if (response.ok) {
-//                 return response;
-//             } else if (response.status === 400 || response.status === 401) {
-//                 return false; // Alert will popup
-//             }
-//         });
-//     } catch (err) {
-//         console.log("Error while fetching data");
-//     }
-// };
+const loginUser = (loginEmail, loginPassword) => {
+    try {
+        return fetch(`${serviceUrl}/api/auth/signin`, {
+            method: "POST",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                email: loginEmail,
+                password: loginPassword,
+            }),
+        }).then((response) => {
+            if (response.ok) {
+                return false;
+            } else {
+                return true; // alert will popup
+            }
+        });
+    } catch (err) {
+        console.log("Error while fetching data");
+    }
+};
 
-// const handleLogin = (loginEmail, loginPassword) => {
-//     const popupAlert = () => {
-//         loginUser(loginEmail, loginPassword)
-//             .then((response) => response.json())
-//             .then(user => {
-//                 if (!user.error) { // Authenticated
-//                     User = user;
-//                     // 
-//                 } else {
-//                     alert('Invalid username or password')
-//                 }
-//             });
-//     };
-//     popupAlert();
-// };
+const handleLogin = (loginEmail, loginPassword) => {
+    loginUser(loginEmail, loginPassword)
+        .then(toAlert => {
+            if (toAlert) {
+                alert('Invalid username or password')
+            } else {
+                window.location.href = serviceUrl;
+            }
+        });
+};
+
+// Prevent form from default submitting
+const submit = () => {
+    return false;
+}
+
+/* Forms input animations */
 
 const inputs = document.querySelectorAll(".input");
-
 
 function addcl() {
     let parent = this.parentNode.parentNode;
@@ -54,7 +53,6 @@ function remcl() {
         parent.classList.remove("focus");
     }
 }
-
 
 inputs.forEach(input => {
     input.addEventListener("focus", addcl);

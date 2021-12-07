@@ -9,14 +9,14 @@
                 <main>
                     <div class="container" id="signIn">
                         <div class="login-content">
-                            <form action="index.html">
+                            <div class="form">
                                 <div class="input-div one">
                                     <div class="i">
                                         <i class="fas fa-envelope"></i>
                                     </div>
                                     <div class="div">
                                         <h5>Email</h5>
-                                        <input type="email" class="input">
+                                        <input type="email" class="input" id="email">
                                     </div>
                                 </div>
                                 <div class="input-div pass">
@@ -25,13 +25,13 @@
                                     </div>
                                     <div class="div">
                                         <h5>Password</h5>
-                                        <input type="password" class="input">
+                                        <input type="password" class="input" id="password">
                                     </div>
                                 </div>
-                                <input type="submit" class="btn" value="Sign in"><br>
-                                <p> Don't Have An Account? <a href="http://localhost:8080/api/auth/signup" id="signNow">Sign Up Now</a></p><br>
+                                <input type="submit" class="btn" value="Sign in" onclick="handleLogin(document.getElementById('email').value,document.getElementById('password').value)"><br>
+                                <p> Don't Have An Account? <a href="http://localhost:8080/logup" id="signNow">Sign Up Now</a></p><br>
                                 <a href="#" id="forgotPsw">Forgot Password</a>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </main>
@@ -41,11 +41,3 @@
     </body>
 
 </html>
-
-
-<!-- <h1>Login</h1>
-        <form method="GET" action="./homepage.html">
-            <input type="email" placeholder="Email" name="email" id="email"><br>
-            <input type="password" placeholder="Password" name="password" id="password"><br>
-            <button type="submit" onclick="handleLogin(document.getElementById('email').value,document.getElementById('password').value)">Submit</button>
-        </form> -->
