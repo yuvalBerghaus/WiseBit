@@ -16,7 +16,7 @@
     text-align: center;
 }
 
-form {
+.form {
     width: 360px;
 }
 
@@ -173,7 +173,7 @@ form {
 }
 
 @media screen and (max-width: 1000px) {
-    form {
+    .form {
         width: 290px;
     }
     .login-content h2 {
