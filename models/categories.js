@@ -1,8 +1,6 @@
 const Categories = new Schema({
-    uid: String,
-    CategoryName: String,
-    DesiredBudget: Number,
-    Counter: Number,
+    category_id: String,
+    category_name: String,
 })
 const Category = model('Category', categorySchema)
 module.exports = Category;
