@@ -1,13 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const { authRouter } = require('./routers/authRouter');
+const { categoryRouter } = require('./routers/categoryRouter');
 const { pagesRouter } = require('./routers/pagesRouter');
 const { pagesController } = require('./controllers/pagesController');
 const app = express();
 const port = process.env.PORT || 8080;
 
-const logger = require('morgan');
-app.use(logger('dev'));
+if(process.env.NODE_ENV === 'development') {
+    const logger = require('morgan');
+    app.use(logger('dev'));
+}
 
 app.use(express.static('public'));
 app.use(express.json());
@@ -18,6 +21,7 @@ app.set('view engine', 'ejs');
 app.use(cors({ origin: '*', credentials: true }))
 
 app.use('/api/auth', authRouter);
+app.use('/api/categories', categoryRouter);
 app.get('/login', pagesController.login);
 app.get('/logup', pagesController.logup);
 

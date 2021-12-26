@@ -7,7 +7,7 @@ exports.authController = {
         // check if user exists in db and get his data
         const user = { 'name': 'Oded', 'id': '123' };
 
-        const token = user.id
+        const token = user.id;
         res.cookie("access_token", token, {
             secure: process.env.NODE_ENV !== "development",
             httpOnly: true,
@@ -18,7 +18,6 @@ exports.authController = {
         res.status(200).send('Authenticated');
     },
     logupUser(req, res) {
-        const { username, email, phone, password } = req.body;
 
         // create new user here and store in db
         const token = '111';
