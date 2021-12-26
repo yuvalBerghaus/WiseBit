@@ -15,14 +15,24 @@ exports.authController = {
             expires: dayjs().add(1, "hour").toDate()
         });
 
-        //res.status(200).render('index', { title: 'Home' });
         res.status(200).send('Authenticated');
     },
     logupUser(req, res) {
-        res.status(200).render('signUp', { title: 'Sign Up' });
+        const { username, email, phone, password } = req.body;
+
+        // create new user here and store in db
+        const token = '111';
+        res.cookie("access_token", token, {
+            secure: process.env.NODE_ENV !== "development",
+            httpOnly: true,
+            sameSite: process.env.NODE_ENV !== "development" ? "None" : "Lax",
+            expires: dayjs().add(1, "hour").toDate()
+        });
+
+        res.status(200).redirect('/index');
     },
     logout(req, res) {
         res.clearCookie("access_token");
-        res.status(200).render('signin', { title: 'Sign In' });
+        res.status(200).redirect('/signIn');
     }
 };

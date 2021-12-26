@@ -112,3 +112,12 @@ main {
     color: #FFF;
     font-size: 30px;
 }
+
+#mainNav i.selected {
+    color: #6E9E06;
+    background-color: #FFF;
+    padding: 10px;
+    border-radius: 100px;
+    position: relative;
+    bottom: 5px;
+}

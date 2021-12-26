@@ -33,10 +33,29 @@ const handleLogin = (loginEmail, loginPassword) => {
         });
 };
 
-// Prevent form from default submitting
-const submit = () => {
-    return false;
-}
+const logupUser = (username, email, phone, password) => {
+    if(!username || !email || !password) {
+        alert('Please fill all mandatory fields');
+        return;
+    }
+    try {
+        return fetch(`${serviceUrl}/api/auth/signup`, {
+            method: "POST",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                username: username,
+                email: email,
+                phone: phone,
+                password: password
+            }),
+        }).then((response) => {
+            
+        });
+    } catch (err) {
+        console.log("Error while fetching data");
+    }
+};
 
 /* Forms input animations */
 

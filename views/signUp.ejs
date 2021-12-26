@@ -17,7 +17,7 @@
                                     </div>
                                     <div class="div">
                                         <h5>Username</h5>
-                                        <input type="text" class="input">
+                                        <input type="text" class="input" id="username">
                                     </div>
                                 </div>
                                 <div class="input-div pass">
@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="div">
                                         <h5>Email</h5>
-                                        <input type="email" class="input">
+                                        <input type="email" class="input" id="email">
                                     </div>
                                 </div>
                                 <div class="input-div pass">
@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="div">
                                         <h5>Phone</h5>
-                                        <input type="text" class="input">
+                                        <input type="text" class="input" id="phone">
                                     </div>
                                 </div>
                                 <div class="input-div pass">
@@ -44,10 +44,16 @@
                                     </div>
                                     <div class="div">
                                         <h5>Password</h5>
-                                        <input type="password" class="input">
+                                        <input type="password" class="input" id="password">
                                     </div>
                                 </div>
-                                <input type="submit" class="btn" value="Sign Up"><br>
+                                <input
+                                    type="submit" class="btn" value="Sign Up" 
+                                    onclick="handleLogup(document.getElementById('username').value,
+                                                        document.getElementById('email').value,
+                                                        document.getElementById('phone').value,
+                                                        document.getElementById('password').value,)"><br>
+                                                        
                                 <p> Already have An Account? <a href="http://localhost:8080/login" id="signNow">Sign In Now</a></p>
                             </div>
                         </div>

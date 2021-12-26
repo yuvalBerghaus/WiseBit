@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { authRouter } = require('./routers/authRouter');
 const { pagesRouter } = require('./routers/pagesRouter');
+const { pagesController } = require('./controllers/pagesController');
 const app = express();
 const port = process.env.PORT || 8080;
 
@@ -17,10 +18,13 @@ app.set('view engine', 'ejs');
 app.use(cors({ origin: '*', credentials: true }))
 
 app.use('/api/auth', authRouter);
+app.get('/login', pagesController.login);
+app.get('/logup', pagesController.logup);
 
 app.use((req, res, next) => {
     if (req.headers.cookie) {
         const token = req.headers.cookie.split('=')[1];
+        console.log(token)
         if (token) {
             // check here if there is user id that equals to this token
             // if no user id - redirect to login
