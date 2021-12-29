@@ -1,21 +1,16 @@
 const User = require('../models/user');
 
 exports.userController = {
-    addCategory(req, res) {
-        const { body } = req;
-
-        const newCategory = new Category(body);
-        const result = newCategory.save();
-
-        if(result) {
-            res.status(200).json({'success': 'Category added successfully'});
-        } else {
-            res.status(500).json({'error': 'Error saving a category'});
-        }
-    },
-    getCategories(req, res) {
-        Category.find({})
+    getUsers(req, res) {
+        User.find({})
             .then(docs => res.status(200).json(docs))
             .catch(err => res.status(500).json({'error': `Error getting the data from db: ${err}`}));
+    },
+    getUser(req, res) {
+        const userId = req.params.userId;
+        console.log(userId)
+        User.findOne({_id: userId})
+            .then(docs => res.status(200).json(docs))
+            .catch(err => res.status(500).json({'error': 'Error getting the data from db'}));
     }
 };

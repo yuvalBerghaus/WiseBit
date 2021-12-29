@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { authRouter } = require('./routers/authRouter');
 const { categoryRouter } = require('./routers/categoryRouter');
+const { userRouter } = require('./routers/userRouter');
 const { pagesRouter } = require('./routers/pagesRouter');
 const { pagesController } = require('./controllers/pagesController');
 const app = express();
@@ -22,6 +23,7 @@ app.use(cors({ origin: '*', credentials: true }))
 
 app.use('/api/auth', authRouter);
 app.use('/api/categories', categoryRouter);
+app.use('/api/users', userRouter);
 app.get('/login', pagesController.login);
 app.get('/logup', pagesController.logup);
 

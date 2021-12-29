@@ -10,8 +10,7 @@ const isValidUserData = (body) => {
 exports.authController = {
     loginUser(req, res) {
         const { email, password } = req.body;
-        // check if user exists in db and get his data
-        const user = { 'name': 'Oded', 'id': '123' };
+        //axios.get(`http://localhost:8080/api/users`)
 
         const token = user.id;
         res.cookie("access_token", token, {
