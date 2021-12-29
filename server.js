@@ -28,7 +28,6 @@ app.get('/logup', pagesController.logup);
 app.use((req, res, next) => {
     if (req.headers.cookie) {
         const token = req.headers.cookie.split('=')[1];
-        console.log(token)
         if (token) {
             // check here if there is user id that equals to this token
             // if no user id - redirect to login

@@ -1,6 +1,6 @@
-const Category = require('../models/categories');
+const User = require('../models/user');
 
-exports.categoryController = {
+exports.userController = {
     addCategory(req, res) {
         const { body } = req;
 
