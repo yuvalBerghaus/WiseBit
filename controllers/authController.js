@@ -9,18 +9,27 @@ const isValidUserData = (body) => {
 
 exports.authController = {
     loginUser(req, res) {
-        const { email, password } = req.body;
-        //axios.get(`http://localhost:8080/api/users`)
+        const { body } = req;
+        axios.get(`http://localhost:8080/api/users`)
+        .then(users => {
+            const user = users.data.find(user => ((user.email === body.email) && (user.password === body.password)));
+            if(user) {
+                const token = user._id;
+                res.cookie("access_token", token, {
+                    secure: process.env.NODE_ENV !== "development",
+                    httpOnly: true,
+                    sameSite: process.env.NODE_ENV !== "development" ? "None" : "Lax",
+                    expires: dayjs().add(1, "hour").toDate()
+                });
 
-        const token = user.id;
-        res.cookie("access_token", token, {
-            secure: process.env.NODE_ENV !== "development",
-            httpOnly: true,
-            sameSite: process.env.NODE_ENV !== "development" ? "None" : "Lax",
-            expires: dayjs().add(1, "hour").toDate()
+                res.status(200).redirect('/');
+            } else {
+                res.status(401).redirect('/signIn');
+            }
+        })
+        .catch(error => {
+            res.status(500).json({'error': 'Error getting users'});
         });
-
-        res.status(200).send('Authenticated');
     },
     logupUser(req, res) {
         const { body } = req;
