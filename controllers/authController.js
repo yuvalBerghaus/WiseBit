@@ -22,9 +22,9 @@ exports.authController = {
                     expires: dayjs().add(1, "hour").toDate()
                 });
 
-                res.status(200).redirect('/');
+                res.status(200).json({'error': 'Authorized'});
             } else {
-                res.status(401).redirect('/signIn');
+                res.status(401).json({'error': 'Unauthorized'});
             }
         })
         .catch(error => {
