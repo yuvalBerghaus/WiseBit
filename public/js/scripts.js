@@ -33,7 +33,10 @@ const handleLogin = (loginEmail, loginPassword) => {
         });
 };
 
-const logupUser = (username, email, phone, password) => {
+const logupUser = (username, email, password, desiredBudget) => {
+    if(!desiredBudget) {
+        desiredBudget = 0;
+    }
     if(!username || !email || !password) {
         alert('Please fill all mandatory fields');
         return;
@@ -46,11 +49,11 @@ const logupUser = (username, email, phone, password) => {
             body: JSON.stringify({
                 username: username,
                 email: email,
-                phone: phone,
-                password: password
+                password: password,
+                desired_budget: desiredBudget
             }),
-        }).then((response) => {
-            
+        }).then(() => {
+            window.location.href = serviceUrl;
         });
     } catch (err) {
         console.log("Error while fetching data");

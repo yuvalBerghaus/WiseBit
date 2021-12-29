@@ -169,6 +169,14 @@
     background-position: right;
 }
 
+.enterDesiredBudget {
+    margin-top: 25px;
+}
+
+.input-div.budget {
+    margin-top: 0;
+}
+
 @media screen and (max-width: 1050px) {
     .container {
         grid-gap: 5rem;
