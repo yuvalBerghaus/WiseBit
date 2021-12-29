@@ -1,6 +1,5 @@
 .container {
     width: 100vw;
-    height: 90vh;
     display: block;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 7rem;
@@ -41,7 +40,7 @@
 }
 
 .login-content .input-div.one {
-    margin-top: 115px;
+    margin-top: 60px;
 }
 
 .i {
@@ -130,6 +129,10 @@
     color: #999;
     font-size: 0.9rem;
     transition: .3s;
+}
+
+.alreadyHaveAccount {
+    margin-bottom: 40px;
 }
 
 #signNow {
