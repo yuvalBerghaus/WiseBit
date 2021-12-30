@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const dayjs = require("dayjs");
 const axios = require('axios');
 const User = require('../models/user');
+const { updateAllowedBudget } = require('../advisor');
 
 const isValidUserData = (body) => {
     return body.username && body.email && body.password && body.desired_budget;
@@ -22,13 +23,13 @@ exports.authController = {
                     expires: dayjs().add(1, "hour").toDate()
                 });
 
-                res.status(200).json({'error': 'Authorized'});
+                res.status(200).json({'success': 'Authorized'});
             } else {
                 res.status(401).json({'error': 'Unauthorized'});
             }
         })
         .catch(error => {
-            res.status(500).json({'error': 'Error getting users'});
+            res.status(500).json({'error': `Error getting users:${error}`});
         });
     },
     logupUser(req, res) {
@@ -48,7 +49,7 @@ exports.authController = {
                 const counters = categories.data.map(category => { 
                     return {
                         'category_id': category._id,
-                        'count': 0
+                        'count': 1
                     }         
                 });
 
@@ -79,7 +80,9 @@ exports.authController = {
                         sameSite: process.env.NODE_ENV !== "development" ? "None" : "Lax",
                         expires: dayjs().add(1, "hour").toDate()
                     });
-                    res.status(200).redirect('/');
+
+                    updateAllowedBudget(token)
+                        .then(() => res.status(200).redirect('/'))
                 })
                 .catch(() => {
                     res.status(500).json({'error': 'Error saving a user'});

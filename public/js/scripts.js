@@ -35,7 +35,7 @@ const handleLogin = (loginEmail, loginPassword) => {
 
 const logupUser = (username, email, password, desiredBudget) => {
     if(!desiredBudget) {
-        desiredBudget = 0;
+        desiredBudget = 1000;
     }
     if(!username || !email || !password) {
         alert('Please fill all mandatory fields');
