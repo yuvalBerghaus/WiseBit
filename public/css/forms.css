@@ -1,6 +1,5 @@
 .container {
     width: 100vw;
-    height: 90vh;
     display: block;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 7rem;
@@ -41,7 +40,7 @@
 }
 
 .login-content .input-div.one {
-    margin-top: 115px;
+    margin-top: 60px;
 }
 
 .i {
@@ -132,6 +131,10 @@
     transition: .3s;
 }
 
+.alreadyHaveAccount {
+    margin-bottom: 40px;
+}
+
 #signNow {
     text-decoration: none;
     color: #6E9E06;
@@ -164,6 +167,14 @@
 
 .btn:hover {
     background-position: right;
+}
+
+.enterDesiredBudget {
+    margin-top: 25px;
+}
+
+.input-div.budget {
+    margin-top: 0;
 }
 
 @media screen and (max-width: 1050px) {

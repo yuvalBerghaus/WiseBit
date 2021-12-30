@@ -1,6 +1,9 @@
-const Categories = new Schema({
-    category_id: String,
-    category_name: String,
-})
+const { Schema, model } = require('mongoose');
+
+const categorySchema = new Schema({
+    name: String,
+}, { collection: 'categories' })
+
 const Category = model('Category', categorySchema)
+
 module.exports = Category;

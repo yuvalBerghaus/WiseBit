@@ -19,14 +19,13 @@ body {
 
 .wrapper {
     width: 100%;
-    margin-top: 63px;
     height: auto;
 }
 
 main {
     background-color: #FFF;
     width: 100%;
-    min-height: 70vh;
+    min-height: 61vh;
     border-radius: 50px;
 }
 
@@ -40,11 +39,10 @@ main {
 #logo {
     width: 250px;
     height: 250px;
-    margin: auto auto;
+    margin: 0 auto;
     background-image: url('../images/logo.png');
     background-position: center;
 }
-
 
 /* Protected */
 
@@ -111,4 +109,13 @@ main {
     text-decoration: none;
     color: #FFF;
     font-size: 30px;
+}
+
+#mainNav i.selected {
+    color: #6E9E06;
+    background-color: #FFF;
+    padding: 10px;
+    border-radius: 100px;
+    position: relative;
+    bottom: 5px;
 }

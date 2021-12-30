@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon server.js"
+        "dev": "nodemon index.js"
     },
     "repository": {
         "type": "git",
@@ -21,6 +21,7 @@
         "nodemon": "^2.0.15"
     },
     "dependencies": {
+        "axios": "^0.24.0",
         "cors": "^2.8.5",
         "dayjs": "^1.10.7",
         "dotenv": "^10.0.0",
