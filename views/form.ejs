@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<%- include("./partials/head.ejs") %>
+
+    <body>
+        <div id="#protectedWrapper">
+            <%- include("./partials/protectedHeader.ejs") %>
+
+                <main>
+                    <h1 class="heading">Add Expense</h1>
+                    <form id="contact" action="" name="myForm" method="post" onsubmit="return check()">
+                        <p>The expense about:</p>
+                        <fieldset>
+                            <input placeholder="Subject" class="subject" type="text" tabindex="1" name="name" autocomplete="off">
+                        </fieldset>
+                        <p>The sum of the expense</p>
+                        <fieldset>
+                            <input placeholder="Subject" class="subject" type="text" tabindex="1" name="name" autocomplete="off">
+                        </fieldset>
+                        <fieldset>
+                            <label>Day of the week:</label><br>
+                            <select name="day">
+                                <option value="61cc5211538c469076ba64d6">Home</option>
+                                <option value="61cc5229538c469076ba64d8">Grocery</option>
+                                <option value="61cc5237538c469076ba64da">Hangout</option>
+                                <option value="61cc5240538c469076ba64dc">Patrol</option>
+                            </select>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                        </fieldset>
+                        <p class="fileError"></p>
+                    </form>
+                    <section id="content">
+
+                        <div id="transactionsList"></div>
+
+                        <div id="graph"></div>
+
+                    </section>
+                </main>
+
+        </div>
+
+        <%- include("./partials/nav.ejs") %>
+            <script type="text/javascript" src="/js/scripts.js"></script>
+    </body>
+
+</html>
