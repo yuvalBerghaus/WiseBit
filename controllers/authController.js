@@ -96,5 +96,9 @@ exports.authController = {
     logout(req, res) {
         res.clearCookie("access_token");
         res.status(200).redirect('/signIn');
+    },
+    getUserId(req, res) {
+        const userId = req.headers.cookie.split('=')[1]
+        res.status(200).send(userId);
     }
 };
