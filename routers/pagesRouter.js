@@ -5,6 +5,7 @@ const pagesRouter = new Router();
 
 pagesRouter.get('/login', pagesController.login);
 pagesRouter.get('/logup', pagesController.logup);
+pagesRouter.get('/form', pagesController.form);
 pagesRouter.get('/', pagesController.index);
 
 module.exports = { pagesRouter };
