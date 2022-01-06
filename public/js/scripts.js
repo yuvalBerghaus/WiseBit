@@ -60,6 +60,45 @@ const logupUser = (username, email, password, desiredBudget) => {
     }
 };
 
+const displayBalance = () => {
+    fetch(`${serviceUrl}/api/auth/userid`, { credentials: 'include' })
+    .then(response => {
+        return response.text();
+    }).then(data => {
+        fetch(`${serviceUrl}/api/users/${data}`)
+        .then(response => {
+            return response.text();
+        })
+        .then(str => {
+            const user = JSON.parse(str);
+            const sum = (prev, curr) => prev + curr.amount_spent;
+
+            const desiredBudget = user.desired_budget;
+            const expenses = user.expenses.reduce(sum, 0);
+            const balance = desiredBudget - expenses;
+
+            $('#balance').text(balance+'$')
+            
+        })
+    })
+}
+
+displayBalance();
+
+/* Insert user Id to display graph */
+const updateGraph = () => {
+    fetch(`${serviceUrl}/api/auth/userid`, { credentials: 'include' })
+    .then(response => {
+        return response.text();
+    }).then(data => {
+        const src = $('iframe').attr('src');
+        newSrc = src.replace('ObjectId()', `ObjectId('${data}')`);
+        $('iframe').attr('src', newSrc);
+    })
+}
+
+updateGraph();
+
 /* Forms input animations */
 
 const inputs = document.querySelectorAll(".input");
