@@ -1,6 +1,5 @@
 exports.pagesController = {
     index(req, res) {
-        // console.log(req.headers.cookie.split('=')[1]);
         res.status(200).render('index', { title: 'Home' });
     },
     login(req, res) {
@@ -10,6 +9,7 @@ exports.pagesController = {
         res.status(200).render('signUp', { title: 'Sign Up' });
     },
     form(req,res){
+        console.log(req.headers.cookie.split('=')[1]);
         res.status(200).render('form', { title: 'form' });
     }
 }; 
