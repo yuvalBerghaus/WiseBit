@@ -7,5 +7,9 @@ exports.pagesController = {
     },
     logup(req, res) {
         res.status(200).render('signUp', { title: 'Sign Up' });
+    },
+    form(req,res){
+        console.log(req.headers.cookie.split('=')[1]);
+        res.status(200).render('form', { title: 'form' });
     }
-};
+}; 
