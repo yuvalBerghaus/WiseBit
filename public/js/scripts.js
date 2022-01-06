@@ -80,3 +80,24 @@ inputs.forEach(input => {
     input.addEventListener("focus", addcl);
     input.addEventListener("blur", remcl);
 });
+const check = () => {
+    // const newExpense = {
+    //     "categoryId": document.forms["myForm"]["type"].value,
+    //     "price": document.forms["myForm"]["price"].value,
+    // };
+    console.log("newExpense");
+    // const res = $.ajax({
+    //     type: "PUT",
+    //     url: "http://localhost:8080/api/users",
+    //     data: newExpense,
+    //     success:(res)=>{
+    //         fetch("http://localhost:8080");
+    //     },
+    //     error: (response) => {
+    //         fetch("http://localhost:8080");
+    //         // fileErrorTreatment(response.status);
+    //     }
+    // });
+
+    return false;
+}

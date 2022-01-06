@@ -1,6 +1,6 @@
 exports.pagesController = {
     index(req, res) {
-        console.log(req.headers.cookie.split('=')[1]);
+        // console.log(req.headers.cookie.split('=')[1]);
         res.status(200).render('index', { title: 'Home' });
     },
     login(req, res) {
