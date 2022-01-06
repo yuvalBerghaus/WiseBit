@@ -60,6 +60,10 @@ const logupUser = (username, email, password, desiredBudget) => {
     }
 };
 
+const userMenu = () => {
+    $('#userMenu').toggle()
+}
+
 const displayBalance = () => {
     fetch(`${serviceUrl}/api/auth/userid`, { credentials: 'include' })
     .then(response => {
@@ -102,8 +106,8 @@ updateGraph();
 /* Categories */
 const getCategoryNameByIndex = (index) => {
     if(index == 0)  return 'Home';
-    if(index == 1)  return 'Grocery';
-    if(index == 2)  return 'Hangout';
+    if(index == 1)  return 'Hangout';
+    if(index == 2)  return 'Grocery';
     if(index == 3)  return 'Patrol';
 };
 
@@ -131,18 +135,18 @@ const renderCategories = () => {
                                     a 15.9155 15.9155 0 0 1 0 -31.831"
                                 />
                                 <path class="circle"
-                                    stroke-dasharray="${expense.amount_spent/user.allowed_budget[index].sum*100}, 100"
+                                    stroke-dasharray="${parseFloat(expense.amount_spent/user.allowed_budget[index].sum*100).toFixed(1)}, 100"
                                     d="M18 2.0845
                                     a 15.9155 15.9155 0 0 1 0 31.831
                                     a 15.9155 15.9155 0 0 1 0 -31.831"
                                 />
-                                <text x="18" y="20.35" class="percentage">${expense.amount_spent/user.allowed_budget[index].sum*100}%</text>
+                                <text x="18" y="20.35" class="percentage">${parseFloat(expense.amount_spent/user.allowed_budget[index].sum*100).toFixed(1)}%</text>
                                 </svg>
                             </div>
                             <div class="infoAndExpense">
                                 <div class="categoryInfo">
                                     <p>${getCategoryNameByIndex(index)}</p>
-                                    <p>${expense.amount_spent/user.allowed_budget[index].sum*100}% of budget</p>
+                                    <p>${parseFloat(expense.amount_spent/user.allowed_budget[index].sum*100).toFixed(1)}% of budget</p>
                                 </div>
                                 <p class="expense">$${expense.amount_spent}</p>
                             </div>
