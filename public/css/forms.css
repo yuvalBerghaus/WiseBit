@@ -246,6 +246,8 @@
   #contact input[type="email"],
   #contact input[type="tel"],
   #contact input[type="url"],
+  #contact input[type="number"],
+  #contact select,
   #contact textarea {
     border: 1px solid #ccc;
     background: #FFF;
@@ -253,7 +255,7 @@
     padding: 10px;
   }
   
-  input, select {
+  input, select, option {
       border: 1px solid #ccc;
   }
   
@@ -278,12 +280,14 @@
     cursor: pointer;
     width: 100%;
     border: none;
-    background: #363636;
+    background: #6E9E06;
     color: #FFF;
     margin: 0 0 5px;
     padding: 10px;
     font-size: 15px;
     text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
   }
   
   button[type="submit"]:hover {
