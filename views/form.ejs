@@ -6,20 +6,18 @@
         <div id="#protectedWrapper">
             <%- include("./partials/protectedHeader.ejs") %>
 
-                <main>
+                <main style="padding-bottom: 200px">
                     <h1 class="heading">Add Expense</h1>
                     <!-- method="post" onsubmit="return check() -->
                     <form id="contact" action="" name="myForm" onsubmit="return check()">
-                        <p>The expense about:</p>
                         <fieldset>
                             <input placeholder="Subject" class="subject" type="text" tabindex="1" name="name" autocomplete="off">
                         </fieldset>
-                        <p>The sum of the expense</p>
                         <fieldset>
-                            <input placeholder="Subject" class="subject" type="text" tabindex="1" name="price" autocomplete="off">
+                            <input placeholder="Amount" class="subject" type="number" tabindex="1" name="price" autocomplete="off" min=0>
                         </fieldset>
                         <fieldset>
-                            <label>Day of the week:</label><br>
+                            <label>Category:</label><br>
                             <select name="type">
                                 <option value="61cc5211538c469076ba64d6">Home</option>
                                 <option value="61cc5229538c469076ba64d8">Grocery</option>

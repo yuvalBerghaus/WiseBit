@@ -1,7 +1,7 @@
 const User = require('../models/user');
 const axios = require('axios');
-const {updateAllowedBudjet} = require('../advisor');
-const { render } = require('express/lib/response');
+const advisor = require('../advisor');
+
 exports.userController = {
     getUsers(req, res) {
         User.find({})
@@ -37,7 +37,7 @@ exports.userController = {
                 })
                 User.updateOne({ _id: userId }, { expenses: newExpenses, counters: newCounter})
                     .then(docs => {
-                        updateAllowedBudjet(userId);
+                        advisor.updateAllowedBudget(userId);
                         res.status(200); res.json(docs);
 
                     })
