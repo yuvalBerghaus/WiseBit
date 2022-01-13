@@ -87,8 +87,6 @@ const displayBalance = () => {
     })
 }
 
-displayBalance();
-
 /* Insert user Id to display graph */
 const updateGraph = () => {
     fetch(`${serviceUrl}/api/auth/userid`, { credentials: 'include' })
@@ -101,13 +99,11 @@ const updateGraph = () => {
     })
 }
 
-updateGraph();
-
 /* Categories */
 const getCategoryNameByIndex = (index) => {
     if(index == 0)  return 'Home';
-    if(index == 1)  return 'Hangout';
-    if(index == 2)  return 'Grocery';
+    if(index == 1)  return 'Grocery';
+    if(index == 2)  return 'Hangout';
     if(index == 3)  return 'Patrol';
 };
 
@@ -158,10 +154,8 @@ const renderCategories = () => {
         })
     })
 }
-renderCategories();
 
 /* Forms input animations */
-
 const inputs = document.querySelectorAll(".input");
 
 function addcl() {
@@ -175,30 +169,27 @@ function remcl() {
         parent.classList.remove("focus");
     }
 }
+/****/
 
 inputs.forEach(input => {
     input.addEventListener("focus", addcl);
     input.addEventListener("blur", remcl);
 });
-// alert("newExpense");
+
 const check = () => {
     const newExpense = {
         "categoryId": document.forms["myForm"]["type"].value,
         "price": document.forms["myForm"]["price"].value,
     };
-    // alert("newExpense");
-    const res = $.ajax({
+    $.ajax({
         type: "PUT",
         url: "http://localhost:8080/api/users/",
         data: newExpense,
         success:(response)=>{
             window.location.href="http://localhost:8080";
-            console.log("hello");
         },
         error: (response) => {
             window.location.href="http://localhost:8080";
-            // alert("dd");
-            // fileErrorTreatment(response.status);
         }
     });
 

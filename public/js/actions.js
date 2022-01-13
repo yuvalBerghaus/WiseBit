@@ -1,0 +1,2 @@
+displayBalance();
+renderCategories();

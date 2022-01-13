@@ -20,12 +20,12 @@ exports.userController = {
         const categoryId = req.body.categoryId;
         const price = req.body.price;
         axios(`http://localhost:8080/api/users/${userId}`)
-            .then(object => {
-                let expenses = object.data.expenses;
-                let counter = object.data.counters;
+            .then(user => {
+                let expenses = user.data.expenses;
+                let counter = user.data.counters;
                 const newExpenses = expenses.map(expense => {
                     if (expense.category_id == categoryId) {
-                        expense.amount_spent += price;
+                        expense.amount_spent = parseInt(expense.amount_spent) + parseInt(price);
                     }
                     return expense;
                 })
