@@ -9,11 +9,9 @@ exports.pagesController = {
         res.status(200).render('signUp', { title: 'Sign Up' });
     },
     form(req,res){
-        console.log(req.headers.cookie.split('=')[1]);
         res.status(200).render('form', { title: 'Add Expense', home: '', expenses: 'selected', chart: '' });
     },
     charts(req,res){
-        console.log(req.headers.cookie.split('=')[1]);
         res.status(200).render('charts', { title: 'Chart', home: '', expenses: '', chart: 'selected' });
     }
 }; 
